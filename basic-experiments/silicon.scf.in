@@ -1,0 +1,31 @@
+&CONTROL
+    calculation = 'scf'
+    prefix = 'silicon'
+    outdir = 'out/'
+    pseudo_dir = 'pseudo/'
+    tprnfor = .true.
+    verbosity = 'high'
+/
+
+
+&SYSTEM
+    ibrav = 2
+    celldm(1) = 10.2
+    nat = 2
+    ntyp = 1
+    occupations = 'fixed'
+    ecutwfc = 30
+    ecutrho = 120
+/
+&ELECTRONS
+/
+
+ATOMIC_SPECIES
+    Si 28.086 Si.pbe-nl-rrkjus_psl.1.0.0.UPF
+ATOMIC_POSITIONS alat
+    Si 0.00 0.00 0.00
+    Si 0.25 0.25 0.25
+
+K_POINTS automatic
+    6 6 6 1 1 1
+

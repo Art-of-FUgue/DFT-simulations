@@ -1,0 +1,41 @@
+&CONTROL
+    calculation = 'bands'
+    prefix = 'silicon'
+    outdir = 'out/'
+    pseudo_dir = 'pseudo/'
+    tprnfor = .true.
+    verbosity = 'high'
+/
+
+
+&SYSTEM
+    ibrav = 2
+    celldm(1) = 10.2
+    nat = 2
+    ntyp = 1
+    occupations = 'fixed'
+    ecutwfc = 30
+    ecutrho = 120
+    nbnd = 8
+/
+&ELECTRONS
+/
+
+ATOMIC_SPECIES
+    Si 28.086 Si.pbe-nl-rrkjus_psl.1.0.0.UPF
+ATOMIC_POSITIONS alat
+    Si 0.00 0.00 0.00
+    Si 0.25 0.25 0.25
+
+K_POINTS tpiba_b
+# tpiba_b = k- points in units of 2pi/a, in format for band calculation
+# number of k- points (use high - symmetry points only )
+5
+# kx , ky , kz , n. of points between this and next one
+    0.5 0.5 0.5 20
+    0.0 0.0 0.0 30
+    0.0 0.0 1.0 30
+    0.0 1.0 1.0 30
+    0.0 0.0 0.0 0
+
+
